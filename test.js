@@ -5,7 +5,16 @@ var koa = require('koa'),
 app.use(router(app));
 
 app.get('/test', function *(next) {
-    this.body = "list page";
+    if (this.query === undefined) {
+        this.body = "query is nothing...";
+        return ;
+    }
+
+    if (this.query.appid != undefined) {
+        this.body = "appid : " + this.query.appid;
+    } else {
+        this.body = "appid : " + this.query;
+    }
 });
 
 app.get('/test/:id', function *(next) {
