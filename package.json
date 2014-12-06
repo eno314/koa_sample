@@ -7,7 +7,7 @@
     "start": "node --harmony test.js"
   },
   "dependencies": {
-    "koa": "0.13.x"
+    "koa": "0.13.x",
     "koa-router": "3.7.x"
   },
   "engines": {
